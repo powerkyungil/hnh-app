@@ -117,6 +117,23 @@
   gap: 16px;
 }
 
+.admin-main__notice-list--full {
+  grid-template-columns: 1fr;
+}
+
+.admin-main__infinite {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0 16px;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.admin-main__infinite-text {
+  margin-bottom: 8px;
+}
+
 .admin-detail {
   min-height: 100vh;
   padding: 40px;

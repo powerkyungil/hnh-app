@@ -5,7 +5,9 @@ import '../styles/admin-main.css';
 
 type AdminMainPageProps = {
   notices: Notice[];
+  activeMenu: 'attendance' | 'notice';
   onNoticeSelect: (notice: Notice) => void;
+  onMenuChange: (menu: 'attendance' | 'notice') => void;
 };
 
 const employees: Array<{
@@ -42,7 +44,12 @@ const employees: Array<{
   },
 ];
 
-const AdminMainPage = ({ notices, onNoticeSelect }: AdminMainPageProps) => {
+const AdminMainPage = ({
+  notices,
+  activeMenu,
+  onNoticeSelect,
+  onMenuChange,
+}: AdminMainPageProps) => {
   const latestNotices = notices.slice(0, 3);
 
   return (
@@ -50,10 +57,24 @@ const AdminMainPage = ({ notices, onNoticeSelect }: AdminMainPageProps) => {
       <aside className="admin-sidebar">
         <h1 className="admin-sidebar__title">관리자 모드</h1>
         <nav className="admin-sidebar__nav">
-          <button className="admin-sidebar__link admin-sidebar__link--active">
+          <button
+            className={`admin-sidebar__link ${
+              activeMenu === 'attendance' ? 'admin-sidebar__link--active' : ''
+            }`}
+            type="button"
+            onClick={() => onMenuChange('attendance')}
+          >
             출근현황
           </button>
-          <button className="admin-sidebar__link">공지사항</button>
+          <button
+            className={`admin-sidebar__link ${
+              activeMenu === 'notice' ? 'admin-sidebar__link--active' : ''
+            }`}
+            type="button"
+            onClick={() => onMenuChange('notice')}
+          >
+            공지사항
+          </button>
         </nav>
       </aside>
       <main className="admin-main">
