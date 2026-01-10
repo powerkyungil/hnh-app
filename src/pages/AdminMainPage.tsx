@@ -1,5 +1,12 @@
 import EmployeeCard, { AttendanceStatus } from '../components/EmployeeCard';
+import NoticeCard from '../components/NoticeCard';
+import { Notice } from '../App';
 import '../styles/admin-main.css';
+
+type AdminMainPageProps = {
+  notices: Notice[];
+  onNoticeSelect: (notice: Notice) => void;
+};
 
 const employees: Array<{
   id: number;
@@ -35,7 +42,9 @@ const employees: Array<{
   },
 ];
 
-const AdminMainPage = () => {
+const AdminMainPage = ({ notices, onNoticeSelect }: AdminMainPageProps) => {
+  const latestNotices = notices.slice(0, 3);
+
   return (
     <div className="admin-layout">
       <aside className="admin-sidebar">
@@ -68,6 +77,26 @@ const AdminMainPage = () => {
           {employees.map((employee) => (
             <EmployeeCard key={employee.id} {...employee} />
           ))}
+        </section>
+        <section className="admin-main__notices">
+          <div className="admin-main__section-header">
+            <div>
+              <p className="admin-main__eyebrow">공지사항</p>
+              <h3 className="admin-main__section-title">최신 공지 3건</h3>
+            </div>
+            <span className="admin-main__section-hint">전체보기 준비 중</span>
+          </div>
+          <div className="admin-main__notice-list">
+            {latestNotices.map((notice) => (
+              <NoticeCard
+                key={notice.id}
+                title={notice.title}
+                date={notice.date}
+                summary={notice.summary}
+                onClick={() => onNoticeSelect(notice)}
+              />
+            ))}
+          </div>
         </section>
       </main>
     </div>
