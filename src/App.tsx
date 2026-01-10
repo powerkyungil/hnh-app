@@ -2,6 +2,7 @@ import { useState } from 'react';
 import AdminMainPage from './pages/AdminMainPage';
 import NoticeDetailPage from './pages/NoticeDetailPage';
 import NoticeListPage from './pages/NoticeListPage';
+import AttendancePage from './pages/AttendancePage';
 
 export type Notice = {
   id: number;
@@ -96,9 +97,9 @@ const notices: Notice[] = [
 
 const App = () => {
   const [selectedNotice, setSelectedNotice] = useState<Notice | null>(null);
-  const [activeMenu, setActiveMenu] = useState<'attendance' | 'notice'>(
-    'attendance'
-  );
+  const [activeMenu, setActiveMenu] = useState<
+    'dashboard' | 'attendance' | 'notice'
+  >('dashboard');
 
   if (selectedNotice) {
     return (
@@ -111,18 +112,23 @@ const App = () => {
 
   return (
     <>
-      {activeMenu === 'attendance' ? (
+      {activeMenu === 'dashboard' ? (
         <AdminMainPage
           notices={notices}
           activeMenu={activeMenu}
           onNoticeSelect={(notice) => setSelectedNotice(notice)}
           onMenuChange={setActiveMenu}
         />
-      ) : (
+      ) : activeMenu === 'notice' ? (
         <NoticeListPage
           notices={notices}
           activeMenu={activeMenu}
           onNoticeSelect={(notice) => setSelectedNotice(notice)}
+          onMenuChange={setActiveMenu}
+        />
+      ) : (
+        <AttendancePage
+          activeMenu={activeMenu}
           onMenuChange={setActiveMenu}
         />
       )}

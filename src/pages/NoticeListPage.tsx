@@ -5,9 +5,9 @@ import '../styles/admin-main.css';
 
 type NoticeListPageProps = {
   notices: Notice[];
-  activeMenu: 'attendance' | 'notice';
+  activeMenu: 'dashboard' | 'attendance' | 'notice';
   onNoticeSelect: (notice: Notice) => void;
-  onMenuChange: (menu: 'attendance' | 'notice') => void;
+  onMenuChange: (menu: 'dashboard' | 'attendance' | 'notice') => void;
 };
 
 const PAGE_SIZE = 6;
@@ -52,6 +52,15 @@ const NoticeListPage = ({
       <aside className="admin-sidebar">
         <h1 className="admin-sidebar__title">관리자 모드</h1>
         <nav className="admin-sidebar__nav">
+          <button
+            className={`admin-sidebar__link ${
+              activeMenu === 'dashboard' ? 'admin-sidebar__link--active' : ''
+            }`}
+            type="button"
+            onClick={() => onMenuChange('dashboard')}
+          >
+            대시보드
+          </button>
           <button
             className={`admin-sidebar__link ${
               activeMenu === 'attendance' ? 'admin-sidebar__link--active' : ''
