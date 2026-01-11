@@ -1,0 +1,263 @@
+.admin-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.admin-sidebar__title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.admin-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-sidebar__link {
+  color: inherit;
+  text-align: left;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: transparent;
+  transition: background 0.2s ease;
+}
+
+.admin-sidebar__link:hover {
+  background: rgba(148, 163, 184, 0.2);
+}
+
+.admin-sidebar__link--active {
+  background: rgba(148, 163, 184, 0.35);
+  font-weight: 600;
+}
+
+.admin-main {
+  padding: 36px 40px;
+}
+
+.admin-main__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.admin-main__eyebrow {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.admin-main__title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.admin-main__summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.admin-main__summary-card {
+  background: #ffffff;
+  padding: 18px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 20px;
+}
+
+.admin-main__summary-label {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.admin-main__notices {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-main__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.admin-main__section-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.admin-main__section-hint {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.admin-main__notice-list {
+  display: grid;
+  gap: 16px;
+}
+
+.admin-main__notice-list--full {
+  grid-template-columns: 1fr;
+}
+
+.admin-main__infinite {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0 16px;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.admin-main__infinite-text {
+  margin-bottom: 8px;
+}
+
+.attendance-list {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.attendance-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px 24px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.attendance-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.attendance-card__name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.attendance-card__role {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.attendance-card__status {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.attendance-card__body {
+  display: grid;
+  gap: 10px;
+}
+
+.attendance-card__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.attendance-card__row span {
+  color: #6b7280;
+}
+
+.admin-detail {
+  min-height: 100vh;
+  padding: 40px;
+  background: #f5f7fb;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.admin-detail__header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-detail__back {
+  align-self: flex-start;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #e2e8f0;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.admin-detail__date {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.admin-detail__title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.admin-detail__content {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  line-height: 1.6;
+  color: #374151;
+}
+
+@media (max-width: 900px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .admin-sidebar__nav {
+    flex-direction: row;
+  }
+
+  .admin-main__section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
