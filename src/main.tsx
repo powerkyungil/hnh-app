@@ -5,12 +5,6 @@ import './styles/global.css';
 
 const root = document.getElementById('root');
 
-function RoleGate() {
-  const [role, setRole] = useState<'admin' | 'employee'>('admin');
-
-  return <App role={role} onRoleChange={setRole} />;
-}
-
 if (root) {
   createRoot(root).render(
     <StrictMode>
@@ -18,3 +12,9 @@ if (root) {
     </StrictMode>
   );
 }
+
+const RoleGate = () => {
+  const [role, setRole] = useState<'admin' | 'employee'>('admin');
+
+  return <App role={role} onRoleChange={setRole} />;
+};

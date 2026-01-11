@@ -2,10 +2,10 @@ import { useEffect, useMemo, useState } from 'react';
 import '../styles/admin-main.css';
 
 type EmployeeMainPageProps = {
-  onRoleChange: (role: 'admin' | 'employee') => void;
+  onShowCalendar: () => void;
 };
 
-const EmployeeMainPage = ({ onRoleChange }: EmployeeMainPageProps) => {
+const EmployeeMainPage = ({ onShowCalendar }: EmployeeMainPageProps) => {
   const [now, setNow] = useState(new Date());
   const [checkedIn, setCheckedIn] = useState(false);
 
@@ -39,9 +39,9 @@ const EmployeeMainPage = ({ onRoleChange }: EmployeeMainPageProps) => {
         <button
           className="employee-switch"
           type="button"
-          onClick={() => onRoleChange('admin')}
+          onClick={onShowCalendar}
         >
-          관리자 모드
+          출근 현황
         </button>
       </header>
       <section className="employee-status-card">

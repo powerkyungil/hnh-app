@@ -393,6 +393,121 @@
   color: #6b7280;
 }
 
+.employee-calendar-layout {
+  min-height: 100vh;
+  padding: 32px 24px 48px;
+  background: #f5f7fb;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.employee-calendar-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.employee-back {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #e2e8f0;
+  color: #1f2937;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.employee-calendar-eyebrow {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.employee-calendar-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.employee-calendar {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.employee-calendar__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 12px;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.employee-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.employee-calendar__cell {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 10px 8px;
+  min-height: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.employee-calendar__date {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.employee-calendar__status {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.calendar-status--working {
+  background: #ecfdf3;
+  color: #047857;
+}
+
+.calendar-status--pending {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.calendar-status--done {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.calendar-status--vacation {
+  background: #fef9c3;
+  color: #92400e;
+}
+
+.employee-calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.legend-item {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
 @media (max-width: 900px) {
   .admin-layout {
     grid-template-columns: 1fr;

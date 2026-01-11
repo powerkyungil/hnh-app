@@ -4,6 +4,7 @@ import NoticeDetailPage from './pages/NoticeDetailPage';
 import NoticeListPage from './pages/NoticeListPage';
 import AttendancePage from './pages/AttendancePage';
 import EmployeeMainPage from './pages/EmployeeMainPage';
+import EmployeeAttendancePage from './pages/EmployeeAttendancePage';
 
 export type Notice = {
   id: number;
@@ -106,9 +107,14 @@ const App = ({ role, onRoleChange }: AppProps) => {
   const [activeMenu, setActiveMenu] = useState<
     'dashboard' | 'attendance' | 'notice'
   >('dashboard');
+  const [employeeView, setEmployeeView] = useState<'main' | 'calendar'>('main');
 
   if (role === 'employee') {
-    return <EmployeeMainPage onRoleChange={onRoleChange} />;
+    return employeeView === 'main' ? (
+      <EmployeeMainPage onShowCalendar={() => setEmployeeView('calendar')} />
+    ) : (
+      <EmployeeAttendancePage onBack={() => setEmployeeView('main')} />
+    );
   }
 
   if (selectedNotice) {
