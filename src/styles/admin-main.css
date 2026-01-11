@@ -504,25 +504,26 @@
   width: 10px;
   height: 10px;
   border-radius: 999px;
+  display: inline-block;
 }
 
 .calendar-status--working {
-  background: #ecfdf3;
+  background: #16a34a;
   color: #047857;
 }
 
 .calendar-status--pending {
-  background: #fef2f2;
+  background: #dc2626;
   color: #b91c1c;
 }
 
 .calendar-status--done {
-  background: #eff6ff;
+  background: #2563eb;
   color: #1d4ed8;
 }
 
 .calendar-status--vacation {
-  background: #fef9c3;
+  background: #f59e0b;
   color: #92400e;
 }
 
