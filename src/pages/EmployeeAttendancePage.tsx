@@ -74,21 +74,32 @@ const EmployeeAttendancePage = ({ onBack }: EmployeeAttendancePageProps) => {
             <div key={day.date} className="employee-calendar__cell">
               <span className="employee-calendar__date">{day.date}</span>
               <span
-                className={`employee-calendar__status ${
+                className={`employee-calendar__status-dot ${
                   statusClassMap[day.status]
                 }`}
-              >
-                {day.status}
-              </span>
+                aria-label={day.status}
+              />
             </div>
           ))}
         </div>
       </section>
       <section className="employee-calendar-legend">
-        <span className="legend-item calendar-status--working">근무 중</span>
-        <span className="legend-item calendar-status--pending">출근 전</span>
-        <span className="legend-item calendar-status--done">퇴근 완료</span>
-        <span className="legend-item calendar-status--vacation">휴가</span>
+        <div className="legend-item">
+          <span className="legend-dot calendar-status--working" />
+          근무 중
+        </div>
+        <div className="legend-item">
+          <span className="legend-dot calendar-status--pending" />
+          출근 전
+        </div>
+        <div className="legend-item">
+          <span className="legend-dot calendar-status--done" />
+          퇴근 완료
+        </div>
+        <div className="legend-item">
+          <span className="legend-dot calendar-status--vacation" />
+          휴가
+        </div>
       </section>
     </div>
   );

@@ -500,10 +500,9 @@
   color: #6b7280;
 }
 
-.employee-calendar__status {
-  font-size: 11px;
-  font-weight: 600;
-  padding: 4px 8px;
+.employee-calendar__status-dot {
+  width: 10px;
+  height: 10px;
   border-radius: 999px;
 }
 
@@ -530,14 +529,23 @@
 .employee-calendar-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 12px;
   font-weight: 600;
-  padding: 6px 10px;
+  color: #374151;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
   border-radius: 999px;
+  display: inline-block;
 }
 
 @media (max-width: 900px) {
