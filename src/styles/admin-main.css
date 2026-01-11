@@ -284,12 +284,12 @@
 
 .employee-layout {
   min-height: 100vh;
-  padding: 40px 24px 56px;
+  padding: 24px 20px 40px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 20px;
   background: #f5f7fb;
-  max-width: 520px;
+  max-width: 420px;
   margin: 0 auto;
 }
 
@@ -298,10 +298,15 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  position: sticky;
+  top: 0;
+  background: #f5f7fb;
+  padding: 8px 0;
+  z-index: 1;
 }
 
 .employee-name {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
 }
 
@@ -312,7 +317,7 @@
 }
 
 .employee-switch {
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 10px;
   background: #111827;
   color: #ffffff;
@@ -323,7 +328,7 @@
 .employee-status-card {
   background: #ffffff;
   border-radius: 20px;
-  padding: 20px 24px;
+  padding: 16px 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -337,7 +342,7 @@
 }
 
 .employee-time {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
 }
 
@@ -364,16 +369,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .employee-check {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   background: radial-gradient(circle at top, #60a5fa, #2563eb);
   color: #ffffff;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   box-shadow: 0 18px 40px rgba(37, 99, 235, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -391,6 +396,33 @@
 .employee-action-hint {
   font-size: 13px;
   color: #6b7280;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .employee-layout {
+    padding: 20px 16px 32px;
+  }
+
+  .employee-name {
+    font-size: 16px;
+  }
+
+  .employee-status-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .employee-check {
+    width: 140px;
+    height: 140px;
+    font-size: 18px;
+  }
+
+  .employee-time {
+    font-size: 22px;
+  }
 }
 
 .employee-calendar-layout {
