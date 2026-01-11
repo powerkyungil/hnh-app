@@ -3,6 +3,7 @@ import AdminMainPage from './pages/AdminMainPage';
 import NoticeDetailPage from './pages/NoticeDetailPage';
 import NoticeListPage from './pages/NoticeListPage';
 import AttendancePage from './pages/AttendancePage';
+import EmployeeMainPage from './pages/EmployeeMainPage';
 
 export type Notice = {
   id: number;
@@ -95,11 +96,20 @@ const notices: Notice[] = [
   },
 ];
 
-const App = () => {
+type AppProps = {
+  role: 'admin' | 'employee';
+  onRoleChange: (role: 'admin' | 'employee') => void;
+};
+
+const App = ({ role, onRoleChange }: AppProps) => {
   const [selectedNotice, setSelectedNotice] = useState<Notice | null>(null);
   const [activeMenu, setActiveMenu] = useState<
     'dashboard' | 'attendance' | 'notice'
   >('dashboard');
+
+  if (role === 'employee') {
+    return <EmployeeMainPage onRoleChange={onRoleChange} />;
+  }
 
   if (selectedNotice) {
     return (
