@@ -1,0 +1,570 @@
+.admin-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.admin-sidebar__title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.admin-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-sidebar__link {
+  color: inherit;
+  text-align: left;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: transparent;
+  transition: background 0.2s ease;
+}
+
+.admin-sidebar__link:hover {
+  background: rgba(148, 163, 184, 0.2);
+}
+
+.admin-sidebar__link--active {
+  background: rgba(148, 163, 184, 0.35);
+  font-weight: 600;
+}
+
+.admin-main {
+  padding: 36px 40px;
+}
+
+.admin-main__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.admin-main__eyebrow {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.admin-main__title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.admin-main__summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.admin-main__summary-card {
+  background: #ffffff;
+  padding: 18px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 20px;
+}
+
+.admin-main__summary-label {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.admin-main__notices {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-main__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.admin-main__section-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.admin-main__section-hint {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.admin-main__notice-list {
+  display: grid;
+  gap: 16px;
+}
+
+.admin-main__notice-list--full {
+  grid-template-columns: 1fr;
+}
+
+.admin-main__infinite {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0 16px;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.admin-main__infinite-text {
+  margin-bottom: 8px;
+}
+
+.attendance-list {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.attendance-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px 24px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.attendance-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.attendance-card__name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.attendance-card__role {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.attendance-card__status {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.attendance-card__status--근무-중 {
+  background: #ecfdf3;
+  color: #047857;
+}
+
+.attendance-card__status--출근-전 {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.attendance-card__status--퇴근-완료 {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.attendance-card__status--휴가 {
+  background: #fef9c3;
+  color: #92400e;
+}
+
+.attendance-sort {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.attendance-sort__label {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.attendance-sort__select {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 6px 10px;
+  background: #ffffff;
+  font-size: 13px;
+}
+
+.attendance-card__body {
+  display: grid;
+  gap: 10px;
+}
+
+.attendance-card__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.attendance-card__row span {
+  color: #6b7280;
+}
+
+.admin-detail {
+  min-height: 100vh;
+  padding: 40px;
+  background: #f5f7fb;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.admin-detail__header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-detail__back {
+  align-self: flex-start;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #e2e8f0;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.admin-detail__date {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.admin-detail__title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.admin-detail__content {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  line-height: 1.6;
+  color: #374151;
+}
+
+.employee-layout {
+  min-height: 100vh;
+  padding: 24px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #f5f7fb;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.employee-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  background: #f5f7fb;
+  padding: 8px 0;
+  z-index: 1;
+}
+
+.employee-name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.employee-role {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.employee-switch {
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.employee-status-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.employee-time-label {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.employee-time {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.employee-status {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.employee-status--working {
+  background: #ecfdf3;
+  color: #047857;
+}
+
+.employee-status--pending {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.employee-action {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.employee-check {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top, #60a5fa, #2563eb);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.employee-check.is-active {
+  background: radial-gradient(circle at top, #22c55e, #16a34a);
+  box-shadow: 0 18px 40px rgba(34, 197, 94, 0.35);
+}
+
+.employee-check:hover {
+  transform: translateY(-2px);
+}
+
+.employee-action-hint {
+  font-size: 13px;
+  color: #6b7280;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .employee-layout {
+    padding: 20px 16px 32px;
+  }
+
+  .employee-name {
+    font-size: 16px;
+  }
+
+  .employee-status-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .employee-check {
+    width: 140px;
+    height: 140px;
+    font-size: 18px;
+  }
+
+  .employee-time {
+    font-size: 22px;
+  }
+}
+
+.employee-calendar-layout {
+  min-height: 100vh;
+  padding: 32px 24px 48px;
+  background: #f5f7fb;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.employee-calendar-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.employee-back {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #e2e8f0;
+  color: #1f2937;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.employee-calendar-eyebrow {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.employee-calendar-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.employee-calendar {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.employee-calendar__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 12px;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.employee-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.employee-calendar__cell {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 10px 8px;
+  min-height: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.employee-calendar__date {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.employee-calendar__status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.calendar-status--working {
+  background: #ecfdf3;
+  color: #047857;
+}
+
+.calendar-status--pending {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.calendar-status--done {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.calendar-status--vacation {
+  background: #fef9c3;
+  color: #92400e;
+}
+
+.employee-calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+@media (max-width: 900px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .admin-sidebar__nav {
+    flex-direction: row;
+  }
+
+  .admin-main__section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
